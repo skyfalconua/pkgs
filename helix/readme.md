@@ -2,7 +2,7 @@
 
 ```sh
 helixver="25.07.1"
-curl -sL "artas90.github.io/pkgs/helix/helix-${helixver}-$(uname -m).tgz" | tar xz -C /opt && \
+curl -sL "skyfalconua.github.io/pkgs/helix/helix-${helixver}-$(uname -m).tgz" | tar xz -C /opt && \
 chmod 755 /opt/helix/hx && \
 ln -sfv /opt/helix/hx /usr/bin/hx
 ```
