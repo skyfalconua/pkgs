@@ -1,3 +1,12 @@
+### download
+
+```sh
+neovimver="0.11.5"
+curl -sL "skyfalconua.github.io/pkgs/neovim/neovim-${neovimver}-$(uname -m).tgz" | tar xz -C /opt && \
+chmod 755 /opt/neovim/bin/nvim && \
+ln -sfv /opt/neovim/bin/nvim "$HOME/.dotfiles/bin/nvim"
+```
+
 ### build from source
 
 ```sh
