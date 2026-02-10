@@ -1,7 +1,7 @@
-apt update && apt install -y build-essential curl git
+apt update && DEBIAN_FRONTEND=noninteractive apt install -y build-essential curl git
 
-mver=`date +"%Y.%-m.%-d"`
-gver=`curl -s https://go.dev/VERSION?m=text | head -n 1 | sed 's/^go//'`
+mver=`date +"%y.%-m.%-d"`
+gver=`curl -s 'https://go.dev/VERSION?m=text' | head -n 1 | sed 's/^go//'`
 arch=""
 case "$(uname -m)" in
   x86_64)  arch="amd64" ;;
@@ -15,7 +15,7 @@ cd /tmp
 
 mkdir -p /tmp/golib
 gopkg="go$gver.linux-$arch.tar.gz"
-curl "https://storage.googleapis.com/golang/$gopkg" -o $gopkg
+curl -L "https://go.dev/dl/$gopkg" -o $gopkg
 tar -xzf $gopkg
 
 export PATH=$PATH:/tmp/go/bin
