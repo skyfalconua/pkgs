@@ -13,6 +13,7 @@ _update_yazi() {
 
   wget https://github.com/sxyazi/yazi/releases/download/v${ver}/${pkg}.zip
   unzip ${pkg}.zip
+  mv "${pkg}/ya${exe}" "$_rootdir/yazi/ya-${ver}-${arch}-${os}${exe}"
   mv "${pkg}/yazi${exe}" "$_rootdir/yazi/yazi-${ver}-${arch}-${os}${exe}"
   rm -rf ./${pkg} ./${pkg}.zip
 }
