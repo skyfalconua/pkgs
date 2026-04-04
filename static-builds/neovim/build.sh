@@ -1,7 +1,7 @@
-ver="0.11.5"
+ver="0.12.0"
 arch=$(uname -m)
 mkdir -p /tmp/app/neovim
-apk add build-base cmake coreutils curl gettext-tiny-dev git
+apk add build-base linux-headers cmake coreutils curl gettext-tiny-dev git
 
 curl -L "https://github.com/neovim/neovim/archive/refs/tags/v${ver}.tar.gz" > src.tgz
 tar -xf src.tgz
